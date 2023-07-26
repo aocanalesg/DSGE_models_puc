@@ -1,0 +1,54 @@
+Starting Dynare (version 5.4).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Substitution of endo lags >= 2: added 1 auxiliary variables and equations.
+Found 6 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 1).
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : -0.21445 : 1
+Equation number 2 : -2.95 : 2
+Equation number 3 : -17.4494 : 3
+Equation number 4 : -5 : 4
+Equation number 5 : 0.13591 : a
+
+
+
+STEADY-STATE RESULTS:
+
+c                		 1.01317
+i                		 -0.0515761
+k                		 3.6373
+y                		 1.30943
+a                		 -8.88178e-16
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+            0.95             0.95                0
+          0.9765           0.9765                0
+           1.034            1.034                0
+       8.447e+18       -8.447e+18                0
+             Inf              Inf                0
+
+
+There are 3 eigenvalue(s) larger than 1 in modulus 
+for 2 forward-looking variable(s)
+
+The rank condition ISN'T verified!
+
+[Warning: Problem in the model specification: some variables don't appear as current. Check whether this is desired.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_model', '/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/check_model.m', 21)" style="font-weight:bold">check_model</a> (<a href="matlab: opentoline('/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/check_model.m',21,0)">line 21</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('stoch_simul', '/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/stoch_simul.m', 92)" style="font-weight:bold">stoch_simul</a> (<a href="matlab: opentoline('/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/stoch_simul.m',92,0)">line 92</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('clase1_exp.driver', '/Users/axelcanales/Documents/GitHub/DSGE_models_puc/+clase1_exp/driver.m', 202)" style="font-weight:bold">clase1_exp.driver</a> (<a href="matlab: opentoline('/Users/axelcanales/Documents/GitHub/DSGE_models_puc/+clase1_exp/driver.m',202,0)">line 202</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/dynare.m', 278)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Users/axelcanales/Documents/MATLAB/Dynare/5.4/matlab/dynare.m',278,0)">line 278</a>)] 
