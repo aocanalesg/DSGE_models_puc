@@ -1,15 +1,17 @@
-// Ejemplo RBC ayudantía 1
-// Felipe Martínez
+// Ejemplo RBC ayudantÃ­a 1
+// Felipe MartÃ­nez
 
 // Preamble
 
-// Variables endógenas
+// Variables endÃ³genas
 var c $c$ (long_name='consumption')
     i $i$ (long_name='investment')
     k $k$ (long_name='capital')
     y $y$ (long_name='output')
+    l $l$ (long_name='labor')
     a $a$ (long_name='AR(1) technology shock')
-    r $r$ (long_name='capital return')
+    r $r$ (long_name='capital rate return')
+    w $w$ (long_name='wage')
 ;
 
 // List of predetermined variables
@@ -25,15 +27,20 @@ parameters alph     $\alpha$    (long_name='capital share')
            delta    $\delta$    (long_name='depreciation rate')
            sigm_e   $\sigma_e$  (long_name='standard deviation')
            rho      $\rho$      (long_name='autocorrelation technology shock')
+           gamma    $\gamma$  (long_name='elasticity substitution')
+           psi      $\psi$     (long_name='
 ;
 
+
 // Parameters value
-alph    =0.36;
-betta   =0.99;
+alph    =0.3;
+gamma   =0.4;
+betta   =0.96;
 sigm    =2;
 delta   =0.025;
 sigm_e  =0.01;
-rho     =0.95;
+rho     =0.90;
+psi     =6;
 
 // Model block
 model;

@@ -9,7 +9,6 @@ var c $c$ (long_name='consumption')
     k $k$ (long_name='capital')
     y $y$ (long_name='output')
     a $a$ (long_name='AR(1) technology shock')
-    r $r$ (long_name='capital return')
 ;
 
 // List of predetermined variables
@@ -28,12 +27,13 @@ parameters alph     $\alpha$    (long_name='capital share')
 ;
 
 // Parameters value
-alph    =0.36;
-betta   =0.99;
-sigm    =2;
-delta   =0.025;
-sigm_e  =0.01;
-rho     =0.95;
+set_param_value('delta', delta);
+alph=0.36;
+betta=0.99;
+// delta=0.025;
+sigm=2;
+sigm_e=0.01;
+rho=0.95;
 
 // Model block
 model;
@@ -48,10 +48,10 @@ end;                // close the model block
 write_latex_original_model;
 
 // Steady state
-initval;
-a=1;
-k=(((1-betta*(1-delta))/alph*a)^(1/(alph-1)));
-y=(exp(a)*k);
+steady_state_model;
+a=0;
+k=(((1-betta*(1-delta))/(alph*exp(a)*betta))^(1/(alph-1)));
+y=(exp(a)*k^alph);
 i=(delta*k);
 c=(y-i);
 end;                // close steady state
