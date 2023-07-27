@@ -47,9 +47,9 @@ end
 %% Se comparan IRFs entre parámetros
 close all
 
-var_name={'Consumo';'Inversion';'Capital';'Producto'; 'Productividad';'Salario';'Ratio';'Trabajo';'Retorno_capital'};
+var_name={'Consumo';'Inversion';'Capital';'Producto'; 'Productividad';'Salario';'Ratio q';'Trabajo';'Retorno del capital'};
 
-figure(1)
+figure(1)=figure('name', 'Nic','units','inch','position',[0,0,14,13]);
 for i=1:9
     subplot(3,3,i)
     plot(1:1:40,loop_mod(:,i,1),'--r');
@@ -57,23 +57,10 @@ for i=1:9
     %yyaxis right
     plot(1:1:40,loop_mod(:,i,2),'o');hold off
     eval(['title(' ,' var_name{i} ', ');' ]);
-    legend('$\psi$=6 - modelo', '$\phi$=0.5 - modelo','Interpreter','latex','Location','southwest');
+    legend('$\psi$=0 - modelo', '$\psi$=6 - modelo','Interpreter','latex','Location','northeast');
 end
+exportgraphics(figure(1),'picture1.png','Resolution',700)
 
+%saveas(gcf,['\Users\axelcanales\Documents\GitHub\DSGE_models_puc\codes_17_07','\fig2'] ,'png');
 %horizon=20;
 %eval(['dynare rbc_param -Dirf_horizon=',num2str(horizon)])
-keyboard
-%% Se comparan IRFs
-close all
-
-var_name={'Consumo';'Inversion';'Capital';'Producto'; 'Productividad';'Salario';'Ratio';'Trabajo';'Retorno_capital'};
-
-figure(1)
-for i=1:9
-    subplot(3,3,i)
-    plot(1:1:40,loop_mod(:,i,1)/ss_mod(i,1),'--r');
-    hold on;
-    plot(1:1:40,loop_param(:,i,2)/ss_param(i,2),'o');hold off
-    eval(['title(' ,' var_name{i} ', ');' ]);
-    legend('$\phi$=0 - modelo', '$\phi$=0 - parametro','Interpreter','latex','Location','southwest');
-end

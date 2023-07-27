@@ -1,5 +1,5 @@
-// Ejemplo RBC ayudantía 1
-// Felipe Martínez
+// TAREA 1 - RBC 
+// Axel Canales & Matilde Cerda
 
 // Preamble
 
