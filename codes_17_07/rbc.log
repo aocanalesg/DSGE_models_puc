@@ -1,0 +1,5 @@
+Starting Dynare (version 5.4).
+Calling Dynare with arguments: noclearall
+Starting preprocessing of the model file ...
+Error: r not used in the model block
+

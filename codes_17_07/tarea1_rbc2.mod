@@ -33,7 +33,6 @@ parameters alph     $\alpha$    (long_name='capital share')
 
 
 // Parameters value
-load psi;
 set_param_value('psi', psi);
 alph    =0.3;
 betta   =0.96;

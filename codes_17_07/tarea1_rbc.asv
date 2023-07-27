@@ -24,7 +24,6 @@ varexo e;
 // Parameters name
 parameters alph     $\alpha$    (long_name='capital share')
            betta    $\beta$     (long_name='discount factor')
-           sigm     $\sigma$    (long_name='risk aversion')
            delta    $\delta$    (long_name='depreciation rate')
            sigm_e   $\sigma_e$  (long_name='standard deviation')
            rho      $\rho$      (long_name='autocorrelation technology shock')
@@ -38,22 +37,21 @@ alph    =0.3;
 betta   =0.96;
 gamma   =0.4;
 delta   =0.025;
-sigm    =2;
 psi     =6;
 rho     =0.90;
 sigm_e  =0.01;
-
-
 
 // Model block
 model;
 exp(w)=(1-gamma)/(gamma)*(exp(c))/(1-exp(l));
 q=betta*(exp(c))/(exp(c(+1)))*(exp(r(+1))+q(+1)*(1-delta));
-1=q*(1-psi/2*(exp(i)/exp(i(+1))-1)^2-psi*(exp(i)/exp(i(+1))-1)*exp(i)/exp(i(-1)))+betta*(exp(c))/(exp(c(+1)))*q(+1)*((exp(i))/(exp(i(-1))-1)*((exp(i(+1)))/(exp(i)))^2;
+1=q*(1-(psi/2)*(exp(i)/exp(i(+1))-1)^2-psi*(exp(i)/exp(i(-1))-1)*(exp(i)/exp(i(-1)))+betta*((exp(c))/(exp(c(+1))))*q(+1)*psi*(exp(i)/exp(i(-1))-1)*((exp(i(+1)))/(exp(i)))^2;
 exp(y)=exp(a)*exp(k)^alph*exp(l)^(1-alph);
-exp(k(+1))=(1-delta)*exp(k)+[1-psi*(exp(i)/exp(i(-1)))*exp(i);
+exp(k(+1))=(1-delta)*exp(k)+[1-psi/2*(exp(i)/exp(i(-1))-1)^2*exp(i);
 exp(y)=exp(c)+exp(i);
 a=rho*a(-1)+sigm_e*+varexo;
+exp(r)=alph*(exp(y))/(exp(k));
+exp(w)=(1-alph)*(exp(y))/(exp(l))
 end;                // close the model block
 
 // Modelo en latex
@@ -62,10 +60,15 @@ write_latex_original_model;
 // Steady state
 initval;
 a=1;
-k=(((1-betta*(1-delta))/alph*a)^(1/(alph-1)));
-y=(exp(a)*k);
+q=1;
+exp(r)=(1-(1-delta)*betta)/(betta);
+exp(k)=alph/exp(r)*y
 i=(delta*k);
-c=(y-i);
+y=(exp(a)*k);
+c=(1-(alph*delta)/(exp(r)))*(y);
+exp(w)=
+exp(l)=(gamma*(1-alph)*(q/()
+
 
 end;                // close steady state
 
